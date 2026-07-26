@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>À propos - EduEvent</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar">
+        <div class="logo">
+            <img class="log" src="images/im.jpg" alt="Logo EduEvent" />
+        </div>
+        <div class="navcontainer">
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="evenement.html">Événements</a></li>
+                <li><a href="a-propos.html" class="active">À propos</a></li>
+            </ul>
+            <ul class="connexion">
+                <li><button class="btn-primary btn-sm"><a id="connexion" href="profil.html">Connexion</a></button></li>
+            </ul>
+        </div>
+        <div class="menu-toggle" id="menuToggle">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <!-- ===== MAIN ===== -->
+    <main class="container">
+
+        <!-- ===== SECTION À PROPOS ===== -->
+        <section class="section" id="apropos">
+            <div class="about-grid">
+                <div class="about-text">
+                    <h2>À propos d'EduEvent</h2>
+                    <p id="text-to-copy">
+                        EduEvent est une plateforme conçue pour rassembler la communauté étudiante autour
+                        d'événements académiques, sportifs, culturels et artistiques. Notre mission est de
+                        faciliter l'accès à des expériences enrichissantes qui complètent la formation
+                        universitaire.
+                    </p>
+                    <p>
+                        Que vous soyez organisateur ou participant, EduEvent vous offre les outils pour
+                        créer, promouvoir et vivre des moments uniques sur le campus. Rejoignez-nous et
+                        faites partie d'une communauté dynamique !
+                    </p>
+
+                    <!-- ===== BOUTON KOPYE ===== -->
+                    <div class="copy-container">
+                        <button id="copyBtn" class="btn-copy">
+                            <i class="fas fa-copy"></i> Copier le texte
+                        </button>
+                        <span id="copyMessage" class="copy-message"></span>
+                    </div>
+
+                    <button class="btn-primary" style="margin-top: 20px;">En savoir plus</button>
+                </div>
+
+                <div class="about-image">
+                    <img class="about" src="images/856085de95ca88129aee6e90690eb1c0.jpg" alt="EduEvent" />
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SECTION ÉQUIPE ===== -->
+        <section class="section">
+            <div class="section-header"><h2>Notre Équipe</h2></div>
+            <br />
+            <div class="speaker-list">
+                <div class="speaker">
+                    <img src="images/Arly.jpg" alt="Arly JEAN" />
+                    <h3>Arly JEAN</h3>
+                    <p>Spécialiste IA</p>
+                </div>
+                <div class="speaker">
+                    <img src="images/Lex.jpg" alt="Alexandra MICHEL" />
+                    <h3>Alexandra Orlanges C. MICHEL</h3>
+                    <p>Data Scientist</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SECTION FORMULAIRE DE CONTACT ===== -->
+        <section class="section contact-section">
+            <div class="section-header"><h2>Contactez-nous</h2></div>
+            <div class="contact-grid">
+                <!-- Fòmilè kontak -->
+                <form id="contactForm" class="contact-form">
+                    <div class="form-group">
+                        <label for="contactName">Nom complet</label>
+                        <input type="text" id="contactName" placeholder="Votre nom" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="contactEmail">Adresse e-mail</label>
+                        <input type="email" id="contactEmail" placeholder="votre@email.com" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="contactSubject">Sujet</label>
+                        <input type="text" id="contactSubject" placeholder="Sujet du message" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="contactMessage">Message</label>
+                        <textarea id="contactMessage" rows="5" placeholder="Votre message..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary">Envoyer</button>
+                </form>
+
+                <!-- Kat entèaktif (Google Maps iframe) -->
+                <div class="contact-map">
+                    <h3>Nous trouver</h3>
+                    <div class="map-container">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3781.123456789012!2d-72.123456!3d19.123456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTnCsDA3JzI0LjQiTiA3MsKwMDcnMjQuNCJX!5e0!3m2!1sfr!2sht!4v1234567890123"
+                            width="100%"
+                            height="300"
+                            style="border:0;"
+                            allowfullscreen=""
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                    <p><i class="fas fa-map-pin"></i> Limonade, Haïti</p>
+                    <p><i class="fas fa-phone"></i> +509 2345 6789</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SECTION FAQ ===== -->
+        <section class="section faq-section">
+            <div class="section-header"><h2>FAQ - Foire aux questions</h2></div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Qu'est-ce qu'EduEvent ?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>EduEvent est une plateforme qui connecte les étudiants aux événements académiques, culturels et sportifs sur le campus.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Comment puis-je m'inscrire à un événement ?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Connectez-vous à votre compte, puis cliquez sur "S'inscrire" sur la page de l'événement qui vous intéresse.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Les événements sont-ils gratuits ?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>La plupart des événements sont gratuits pour les étudiants. Certains ateliers spéciaux peuvent avoir un coût indiqué sur la page.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Comment devenir organisateur ?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Contactez notre équipe via le formulaire de contact pour proposer votre événement. Nous vous guiderons dans le processus.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <div class="footer-logo">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>EduEvent</span>
+                </div>
+                <p class="footer-desc">La plateforme qui connecte les étudiants aux événements qui façonnent leur avenir.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Liens rapides</h4>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="evenement.html">Événements</a></li>
+                    <li><a href="a-propos.html">À propos</a></li>
+                    <li><a href="profil.html">Profil</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Catégories</h4>
+                <ul>
+                    <li><a href="#">Conférences</a></li>
+                    <li><a href="#">Ateliers</a></li>
+                    <li><a href="#">Sport</a></li>
+                    <li><a href="#">Culture</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <ul>
+                    <li><i class="fas fa-envelope"></i> contact@eduevent.com</li>
+                    <li><i class="fas fa-phone"></i> +509 2345678967</li>
+                    <li><i class="fas fa-map-pin"></i> Limonade, Haïti</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 EduEvent. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <!-- ===== SCRIPT ===== -->
+    <script src="js/main.js"></script>
+
+</body>
+</html>
