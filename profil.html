@@ -4,134 +4,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profil Étudiant - EduEvent</title>
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
-
-    <style>
-      
-* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
-
-body { background-color: #f4f6f9; display: flex; flex-direction: column; min-height: 100vh; }
-
-header {
-    display: flex; justify-content: space-between; align-items: center;
-    padding: 15px 40px; background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-}
-.brand { font-size: 22px; font-weight: bold; color: #1a3a5c; }
-nav a { text-decoration: none; color: #333; margin-left: 20px; font-weight: 500; }
-nav a:hover, nav a.active { color: #1a3a5c; }
-
-main { flex: 1; display: flex; justify-content: center; align-items: flex-start; padding: 40px; }
-
-/* Fòmilè Inskripsyon & Modifikasyon */
-.form-card {
-    background: #ffffff; width: 500px; border-radius: 12px;
-    box-shadow: 0 15px 30px rgba(0,0,0,0.1); overflow: hidden;
-}
-.form-header {
-    background-color: #1a3a5c; color: #fff; text-align: center; padding: 25px;
-}
-.form-header h2 { font-size: 22px; }
-.form-header p { font-size: 12px; opacity: 0.7; margin-top: 5px; }
-
-form { padding: 30px; }
-.row-inputs { display: flex; gap: 15px; }
-.row-inputs .input-group { flex: 1; }
-.input-group { margin-bottom: 15px; }
-
-input[type="text"], input[type="email"], input[type="password"], select {
-    width: 100%; padding: 12px 15px; border-radius: 25px; border: none;
-    background-color: #eaf4fc; color: #333; outline: none; font-size: 14px;
-}
-input:focus, select:focus { box-shadow: 0 0 0 2px #1a3a5c; background-color: #fff; }
-select { appearance: none; cursor: pointer; }
-
-/* Foto */
-.file-input-wrapper { display: flex; align-items: center; gap: 10px; background: #eaf4fc; border-radius: 25px; padding: 3px; }
-.file-input-wrapper input { display: none; }
-.custom-file-label {
-    background: #fff; color: #1a3a5c; padding: 8px 18px;
-    border-radius: 20px; cursor: pointer; font-size: 13px; font-weight: bold;
-    border: 1px solid #ddd;
-}
-
-/* Bouton prensipal */
-.btn-submit {
-    width: 100%; padding: 12px; border: none; border-radius: 25px;
-    background-color: #1a3a5c; color: #fff; font-weight: bold; cursor: pointer;
-    font-size: 16px; margin-top: 5px; transition: 0.3s;
-}
-.btn-submit:hover { background-color: #0f2840; }
-
-/* Bouton anile (pou modifikasyon) */
-.btn-cancel-edit {
-    width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 25px;
-    background-color: #fff; color: #333; font-weight: bold; cursor: pointer;
-    font-size: 16px; margin-top: 10px;
-}
-.btn-cancel-edit:hover { background-color: #f4f6f9; }
-
-/* Pwofil la */
-.profile-card { background: #fff; padding: 30px; border-radius: 12px; width: 650px; box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
-.profile-header-content { display: flex; align-items: center; gap: 20px; border-bottom: 2px solid #f0f0f0; padding-bottom: 20px; margin-bottom: 20px; }
-.profile-avatar { width: 100px; height: 100px; border-radius: 50%; object-fit: cover; border: 4px solid #1a3a5c; }
-
-.action-buttons { display: flex; flex-direction: column; gap: 10px; margin-left: auto; }
-.btn-edit { background: #ffc107; color: #333; border: none; padding: 8px 20px; border-radius: 25px; cursor: pointer; font-weight: bold; }
-.btn-edit:hover { background: #e0a800; }
-.btn-danger { background: #dc3545; color: white; border: none; padding: 8px 20px; border-radius: 25px; cursor: pointer; }
-.btn-danger:hover { background: #b02a37; }
-
-footer { text-align: center; padding: 20px; background: #fff; color: #888; font-size: 14px; border-top: 1px solid #eee; }
-    </style>
+    <link rel="stylesheet" href="css/animation.css">
 </head>
 <body>
     <nav class="navbar">
-<div class="logo">
-<img class="log" src="images/im.jpg" alt="Logo EduEvent" />
-</div>
-<div class="navcontainer">
-    <ul class="nav-links" id="navLinks">
-<li><a href="index.html" >Accueil</a></li>
-<li><a href="evenement.html" >Événements</a></li>
-<li><a href="a-propos.html" >À propos</a></li>
-<li><a href="profil.html" class="active" >Profil</a></li>
-</ul>
-
-<!-- <ul class="connexion">
-    <li><button class="btn-primary btn-sm"><a id="connexion" href="connexion.html">Connexion</a></button></li>
-</ul> -->
-</div>
-
-<div class="menu-toggle" id="menuToggle">
-<i class="fas fa-bars"></i>
-</div>
-</nav>
+        <div class="logo">
+            <a href="index.html">
+                <img class="log" src="images/im.jpg" alt="Logo EduEvent" />
+            </a>
+        </div>
+        <div class="navcontainer">
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="evenement.html">Événements</a></li>
+                <li><a href="a-propos.html">À propos</a></li>
+                <li><a href="profil.html" class="active">Profil</a></li>
+            </ul>
+        </div>
+        <div class="menu-toggle" id="menuToggle">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
 
     <main>
-        <!-- ========================================== -->
-        <!-- SEKSYON 1: ENSKRIPSYON (Lè w poko gen kont) -->
-        <!-- ========================================== -->
-        <section id="register-container">
+        <section id="register-container" class="profile-section">
             <div class="form-card">
                 <div class="form-header">
-                    <h2>Inscription Étudiant</h2>
+                    <h2><i class="fas fa-user-plus"></i> Inscription Étudiant</h2>
                     <p>Créez votre compte universitaire</p>
                 </div>
                 <form id="register-form">
                     <div class="row-inputs">
-                        <div class="input-group"><input type="text" id="reg-nom" placeholder="Nom..." required></div>
-                        <div class="input-group"><input type="text" id="reg-prenom" placeholder="Prénom..." required></div>
+                        <div class="input-group">
+                            <input type="text" id="reg-nom" placeholder="Nom" required>
+                        </div>
+                        <div class="input-group">
+                            <input type="text" id="reg-prenom" placeholder="Prénom" required>
+                        </div>
                     </div>
-                    <div class="input-group"><input type="email" id="reg-email" placeholder="Adresse email..." required></div>
+                    <div class="input-group">
+                        <input type="email" id="reg-email" placeholder="Adresse email" required>
+                    </div>
                     <div class="input-group">
                         <select id="reg-faculte" required>
                             <option value="">-- Choisir votre Faculté --</option>
-                            <option value="FSG">FSG (Faculté des Sciences et de genie)</option>
-                            <option value="FSS">FSE (Sciences de l'Éducation)</option>
-                            <option value="FSTEAT">FLSH (Faculté des Sciences )</option>
-                            <option value="FSAHA">FDSE (Faculte des sciences agronomiques )</option>
+                            <option value="FSG">FSG (Faculté des Sciences et de Génie)</option>
+                            <option value="FSS">FSS (Faculté des Sciences de la sante)</option>
+                            <option value="FASE">FASE (Faculté des Arts et des Sciences de l'Éducation)</option>
+                            <option value="FSH">FSH (Faculté des Sciences Humaines et sociales)</option>
+                             <option value="FSTEAT">FSTEAT (Faculté des Sciences de la terre, de l'environnement et de l'aménagement du territoire)</option>
                         </select>
                     </div>
                     <div class="input-group">
@@ -146,90 +70,178 @@ footer { text-align: center; padding: 20px; background: #fff; color: #888; font-
                     </div>
                     <div class="input-group file-input-wrapper">
                         <input type="file" id="reg-photo" accept="image/*">
-                        <label for="reg-photo" class="custom-file-label">Importer une photo</label>
+                        <label for="reg-photo" class="custom-file-label">
+                            <i class="fas fa-camera"></i> Importer une photo
+                        </label>
                         <span id="reg-file-name" class="file-name-display">Aucun fichier</span>
                     </div>
-                    <div class="input-group"><input type="password" id="reg-password" placeholder="Mot de passe (min 6)..." required></div>
-                    <div class="input-group"><input type="password" id="reg-confirm" placeholder="Confirmer le mot de passe..." required></div>
-                    <button type="submit" class="btn-submit">S'inscrire</button>
+                    <div class="input-group">
+                        <input type="password" id="reg-password" placeholder="Mot de passe (min 6 caractères)" required minlength="6">
+                    </div>
+                    <div class="input-group">
+                        <input type="password" id="reg-confirm" placeholder="Confirmer le mot de passe" required>
+                    </div>
+                    <div id="reg-message" class="form-message"></div>
+                    <button type="submit" class="btn-submit">
+                        <i class="fas fa-check-circle"></i> S'inscrire
+                    </button>
+                    <p class="form-switch">
+                        Déjà un compte ? <a href="#" id="switch-to-login">Se connecter</a>
+                    </p>
                 </form>
             </div>
         </section>
-
-        <section id="profile-container" style="display: none;">
+        <section id="login-container" class="profile-section" style="display: none;">
+            <div class="form-card">
+                <div class="form-header">
+                    <h2><i class="fas fa-sign-in-alt"></i> Connexion</h2>
+                    <p>Connectez-vous à votre compte</p>
+                </div>
+                <form id="login-form">
+                    <div class="input-group">
+                        <input type="email" id="login-email" placeholder="Adresse email" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="password" id="login-password" placeholder="Mot de passe" required>
+                    </div>
+                    <div id="login-message" class="form-message"></div>
+                    <button type="submit" class="btn-submit">
+                        <i class="fas fa-sign-in-alt"></i> Se connecter
+                    </button>
+                    <p class="form-switch">
+                        Pas encore de compte ? <a href="#" id="switch-to-register">S'inscrire</a>
+                    </p>
+                </form>
+            </div>
+        </section>
+        <section id="profile-container" class="profile-section" style="display: none;">
             <div class="profile-card">
-                
                 <div class="profile-header-content">
-                    <img id="profile-pic" src="" alt="Photo" class="profile-avatar">
-                    <div>
+                    <img id="profile-pic" src="" alt="Photo de profil" class="profile-avatar">
+                    <div class="profile-info">
                         <h2 id="display-fullname">Nom Prénom</h2>
-                        <p id="display-email">email@example.com</p>
-                        <p id="display-faculte" style="color: #555; font-size: 14px;"><strong>Faculté:</strong> </p>
-                        <p id="display-niveau" style="color: #555; font-size: 14px;"><strong>Niveau:</strong> </p>
+                        <p id="display-email"><i class="fas fa-envelope"></i> email@example.com</p>
+                        <p id="display-faculte"><i class="fas fa-university"></i> <strong>Faculté:</strong> </p>
+                        <p id="display-niveau"><i class="fas fa-graduation-cap"></i> <strong>Niveau:</strong> </p>
                     </div>
                     <div class="action-buttons">
-                        <button id="edit-btn" class="btn-edit">Modifier</button>
-                        <button id="logout-btn" class="btn-danger">Déconnexion</button>
+                        <button id="edit-btn" class="btn-edit">
+                            <i class="fas fa-pen"></i> Modifier
+                        </button>
+                        <button id="logout-btn" class="btn-danger">
+                            <i class="fas fa-sign-out-alt"></i> Déconnexion
+                        </button>
                     </div>
                 </div>
-
-               
-                <h3>Mes événements inscrits</h3>
-                <div id="my-events-list">
-                    <p>Aucun événement pour le moment.</p>
+                <div class="profile-events">
+                    <h3><i class="fas fa-calendar-check"></i> Mes événements inscrits</h3>
+                    <div id="my-events-list">
+                        <p class="empty-events">Aucun événement pour le moment.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-      
-        <section id="edit-container" style="display: none;">
+        <!--SECTION MODIFICATION-->
+        <section id="edit-container" class="profile-section" style="display: none;">
             <div class="form-card">
                 <div class="form-header">
-                    <h2>Modifier mon Profil</h2>
+                    <h2><i class="fas fa-user-edit"></i> Modifier mon Profil</h2>
                     <p>Mettez à jour vos informations</p>
                 </div>
                 <form id="edit-form">
                     <div class="row-inputs">
-                        <div class="input-group"><input type="text" id="edit-nom" required></div>
-                        <div class="input-group"><input type="text" id="edit-prenom" required></div>
+                        <div class="input-group">
+                            <input type="text" id="edit-nom" placeholder="Nom" required>
+                        </div>
+                        <div class="input-group">
+                            <input type="text" id="edit-prenom" placeholder="Prénom" required>
+                        </div>
                     </div>
-                    <div class="input-group"><input type="email" id="edit-email" required></div>
                     <div class="input-group">
-                        <select id="edit-faculte" required>
-                            <option value="FSG">FSG</option>
-                            <option value="FSS">FSS</option>
-                            <option value="FSTEAT">FSTEAT</option>
-                            <option value="FSAHA">FSAHA</option>
+                        <input type="email" id="edit-email" placeholder="Email" required>
+                    </div>
+                     <div class="input-group">
+                        <select id="reg-faculte" required>
+                            <option value="">-- Choisir votre Faculté --</option>
+                            <option value="FSG">FSG (Faculté des Sciences et de Génie)</option>
+                            <option value="FSS">FSS (Faculté des Sciences de la sante)</option>
+                            <option value="FASE">FASE (Faculté des Arts et des Sciences de l'Éducation)</option>
+                            <option value="FSH">FSH (Faculté des Sciences Humaines et sociales)</option>
+                             <option value="FSTEAT">FSTEAT (Faculté des Sciences de la terre, de l'environnement et de l'aménagement du territoire)</option>
                         </select>
                     </div>
                     <div class="input-group">
-                        <select id="edit-niveau" required>
-                            <option value="L1">L1</option>
-                            <option value="L2">L2</option>
-                            <option value="L3">L3</option>
-                            <option value="L4">L4</option>
+                        <select id="reg-niveau" required>
+                            <option value="">-- Choisir votre Niveau --</option>
+                            <option value="L1">Licence 1</option>
+                            <option value="L2">Licence 2</option>
+                            <option value="L3">Licence 3</option>
+                            <option value="L4">Licence 4</option>
                             <option value="M1">Master</option>
                         </select>
                     </div>
                     <div class="input-group file-input-wrapper">
                         <input type="file" id="edit-photo" accept="image/*">
-                        <label for="edit-photo" class="custom-file-label">Changer la photo</label>
+                        <label for="edit-photo" class="custom-file-label">
+                            <i class="fas fa-camera"></i> Changer la photo
+                        </label>
                         <span id="edit-file-name" class="file-name-display">Conserver la photo actuelle</span>
                     </div>
-                  
-                    <div class="input-group"><input type="password" id="edit-password" placeholder="Nouveau mot de passe (laisser vide pour conserver)"></div>
-                    
-                    <button type="submit" class="btn-submit">Enregistrer les modifications</button>
-                    <button type="button" id="cancel-edit-btn" class="btn-cancel-edit">Annuler</button>
+                    <div class="input-group">
+                        <input type="password" id="edit-password" placeholder="Nouveau mot de passe (laisser vide pour conserver)">
+                    </div>
+                    <div id="edit-message" class="form-message"></div>
+                    <button type="submit" class="btn-submit">
+                        <i class="fas fa-save"></i> Enregistrer les modifications
+                    </button>
+                    <button type="button" id="cancel-edit-btn" class="btn-cancel-edit">
+                        <i class="fas fa-times"></i> Annuler
+                    </button>
                 </form>
             </div>
         </section>
+
     </main>
-
-    <footer>
-        <p>&copy; 2026 EduEvent. Tous droits réservés.</p>
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <div class="footer-logo">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>EduEvent</span>
+                </div>
+                <p class="footer-desc">
+                    La plateforme qui connecte les étudiants aux événements qui façonnent leur avenir.
+                </p>
+                <div class="social-icons">
+                <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            </div>
+            <div class="footer-col">
+                <h4>Liens rapides</h4>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="evenement.html">Événements</a></li>
+                    <li><a href="a-propos.html">À propos</a></li>
+                    <li><a href="profil.html">Profil</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <ul>
+                    <li><i class="fas fa-envelope"></i> contact@eduevent.com</li>
+                    <li><i class="fas fa-phone"></i> +509 3503 0605</li>
+                    <li><i class="fas fa-map-pin"></i> Limonade, Haïti</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 EduEvent. Tous droits réservés.</p>
+        </div>
     </footer>
-
     <script src="js/profil.js"></script>
 </body>
 </html>

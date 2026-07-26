@@ -1,104 +1,151 @@
-        // --- MENU TOGGLE ---
-        document.addEventListener('DOMContentLoaded', function() {
-            const toggle = document.getElementById('menuToggle');
-            const navLinks = document.getElementById('navLinks');
-            if (toggle && navLinks) {
-                toggle.addEventListener('click', function(e) {
-                    e.stopPropagation();
-                    navLinks.classList.toggle('show');
-                });
+
+document.addEventListener('DOMContentLoaded', function() {
+// menu mobil
+    console.log('✅ main.js chaje!');
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    if (menuToggle && navLinks) {
+        menuToggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            navLinks.classList.toggle('show');
+            
+            const icon = this.querySelector('i');
+            if (icon) {
+                icon.classList.toggle('fa-bars');
+                icon.classList.toggle('fa-times');
             }
         });
 
-        // --- BOUTON KOPYE ---
-        document.addEventListener('DOMContentLoaded', function() {
-            const copyBtn = document.getElementById('copyBtn');
-            const textToCopy = document.getElementById('text-to-copy');
-            const message = document.getElementById('copyMessage');
-
-            if (copyBtn && textToCopy) {
-                copyBtn.addEventListener('click', function() {
-                    const text = textToCopy.textContent.trim();
-                    // Metòd clipboard API
-                    navigator.clipboard.writeText(text).then(function() {
-                        message.textContent = '✅ Texte copié !';
-                        message.style.color = '#22c55e';
-                        setTimeout(() => {
-                            message.textContent = '';
-                        }, 3000);
-                    }).catch(function() {
-                        // Si clipboard API pa mache, metod alternatif
-                        const textarea = document.createElement('textarea');
-                        textarea.value = text;
-                        document.body.appendChild(textarea);
-                        textarea.select();
-                        document.execCommand('copy');
-                        document.body.removeChild(textarea);
-                        message.textContent = '✅ Texte copié !';
-                        message.style.color = '#22c55e';
-                        setTimeout(() => {
-                            message.textContent = '';
-                        }, 3000);
-                    });
-                });
-            }
-        });
-
-        // --- FAQ TOGGLE ---
-        function toggleFaq(element) {
-            const item = element.closest('.faq-item');
-            const answer = item.querySelector('.faq-answer');
-            const icon = element.querySelector('i');
-
-            // Fèmen tout lòt FAQ
-            document.querySelectorAll('.faq-item').forEach(el => {
-                if (el !== item) {
-                    el.classList.remove('active');
-                    el.querySelector('.faq-answer').style.maxHeight = '0';
-                    el.querySelector('.faq-answer').style.padding = '0 20px';
-                    el.querySelector('.faq-question i').style.transform = 'rotate(0deg)';
+        document.addEventListener('click', function(e) {
+            if (navLinks.classList.contains('show')) {
+                if (!navLinks.contains(e.target) && !menuToggle.contains(e.target)) {
+                    navLinks.classList.remove('show');
+                    const icon = menuToggle.querySelector('i');
+                    if (icon) {
+                        icon.classList.add('fa-bars');
+                        icon.classList.remove('fa-times');
+                    }
                 }
-            });
+            }
+        });
+    }
 
-            // Toggle sa a
-            item.classList.toggle('active');
-            if (item.classList.contains('active')) {
-                answer.style.maxHeight = answer.scrollHeight + 'px';
-                answer.style.padding = '12px 20px';
-                icon.style.transform = 'rotate(180deg)';
-            } else {
-                answer.style.maxHeight = '0';
-                answer.style.padding = '0 20px';
-                icon.style.transform = 'rotate(0deg)';
+    window.toggleFaq = function(element) {
+
+        const faqItem = element.closest('.faq-item');
+        const answer = faqItem.querySelector('.faq-answer');
+        const icon = element.querySelector('i');
+        
+        const isActive = faqItem.classList.contains('active');
+
+        document.querySelectorAll('.faq-item').forEach(item => {
+            if (item !== faqItem) {
+                item.classList.remove('active');
+                const ans = item.querySelector('.faq-answer');
+                const icn = item.querySelector('.faq-question i');
+                if (ans) {
+                    ans.style.display = 'none';
+                    ans.style.maxHeight = '0';
+                }
+                if (icn) {
+                    icn.className = 'fas fa-chevron-down';
+                }
+            }
+        });
+        
+    
+        if (isActive) {
+            faqItem.classList.remove('active');
+            answer.style.display = 'none';
+            answer.style.maxHeight = '0';
+            if (icon) {
+                icon.className = 'fas fa-chevron-down';
+            }
+        } else {
+            faqItem.classList.add('active');
+            answer.style.display = 'block';
+            answer.style.maxHeight = answer.scrollHeight + 'px';
+            if (icon) {
+                icon.className = 'fas fa-chevron-up';
             }
         }
+    };
 
-        // --- FÒMILÈ KONTAK (validasyon) ---
-        document.addEventListener('DOMContentLoaded', function() {
-            const form = document.getElementById('contactForm');
-            if (form) {
-                form.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    const name = document.getElementById('contactName').value.trim();
-                    const email = document.getElementById('contactEmail').value.trim();
-                    const subject = document.getElementById('contactSubject').value.trim();
-                    const message = document.getElementById('contactMessage').value.trim();
+    document.querySelectorAll('.faq-item').forEach(item => {
+        const answer = item.querySelector('.faq-answer');
+        if (answer) {
+            answer.style.display = 'none';
+            answer.style.maxHeight = '0';
+        }
+    });
 
-                    // Validasyon simple
-                    if (name === '' || email === '' || subject === '' || message === '') {
-                        alert('⚠️ Tous les champs sont obligatoires.');
-                        return;
-                    }
+    const newsletterForm = document.getElementById('newsletterForm');
+    const newsletterEmail = document.getElementById('newsletterEmail');
+    const newsletterFeedback = document.getElementById('newsletterFeedback');
 
-                    // Validasyon email
-                    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                    if (!emailPattern.test(email)) {
-                        alert('⚠️ Veuillez entrer une adresse e-mail valide.');
-                        return;
-                    }
+    if (newsletterForm) {
+        newsletterForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = newsletterEmail.value.trim();
 
-                    alert('✅ Votre message a été envoyé avec succès !');
-                    form.reset();
-                });
+            if (!email) {
+                newsletterFeedback.textContent = '⚠️ Veuillez entrer une adresse e-mail.';
+                newsletterFeedback.style.color = '#f59e0b';
+                return;
             }
+
+            if (!email.includes('@') || !email.includes('.')) {
+                newsletterFeedback.textContent = '⚠️ Adresse e-mail invalide.';
+                newsletterFeedback.style.color = '#ef4444';
+                return;
+            }
+
+            newsletterFeedback.textContent = '✅ Merci ! Vous êtes abonné(e) à la newsletter.';
+            newsletterFeedback.style.color = '#22c55e';
+            newsletterForm.reset();
+            setTimeout(() => {
+                newsletterFeedback.textContent = '';
+            }, 5000);
         });
+    }
+
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('contactName').value.trim();
+            const email = document.getElementById('contactEmail').value.trim();
+            const subject = document.getElementById('contactSubject').value.trim();
+            const message = document.getElementById('contactMessage').value.trim();
+
+            if (!name || !email || !subject || !message) {
+                alert('⚠️ Tous les champs sont obligatoires.');
+                return;
+            }
+
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email)) {
+                alert('⚠️ Veuillez entrer une adresse e-mail valide.');
+                return;
+            }
+
+            alert('✅ Votre message a été envoyé avec succès !');
+            contactForm.reset();
+        });
+    }
+
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        const href = link.getAttribute('href');
+        if (href === currentPage || (currentPage === '' && href === 'index.html')) {
+            link.classList.add('active');
+        } else {
+            link.classList.remove('active');
+        }
+    });
+
+    console.log('✅ tout fonksyonalite aktive!');
+});

@@ -1,107 +1,3 @@
-// const bouton = document.getElementById("voirPlus");
-// const evenements = document.querySelectorAll(".hidden");
-
-//     let index = 0;
-
-// bouton.addEventListener("click", function () {
-
-//     for (let i = index; i < index + 4 && i < evenements.length; i++) {
-//         evenements[i].style.display = "block";
-//     }
-
-//     index += 4;
-
-//     if (index >= evenements.length) {
-//         bouton.style.display = "none";
-//     }
-// });
-
-// const boutons = document.querySelectorAll(".filtre");
-// const events = document.querySelectorAll(".event-card");
-
-// boutons.forEach(bouton => {
-//     bouton.addEventListener("click", () => {
-
-//         const filtre = bouton.dataset.filter;
-
-//         events.forEach(event => {
-
-//             if (filtre === "all" || event.dataset.category === filtre) {
-//                 event.style.display = "block";
-//             } else {
-//                 event.style.display = "none";
-//             }
-
-//         });
-
-//     });
-// });
-// const boutonsDate = document.querySelectorAll(".filtre-date");
-
-// boutonsDate.forEach(bouton => {
-//     bouton.addEventListener("click", () => {
-
-//         const filtre = bouton.dataset.date;
-//         const aujourdhui = new Date();
-
-//         events.forEach(event => {
-
-//             const dateEvent = new Date(event.dataset.date);
-
-//             if (filtre === "all") {
-//                 event.style.display = "block";
-//             }
-
-//             else if (filtre === "today") {
-//                 if (dateEvent.toDateString() === aujourdhui.toDateString()) {
-//                     event.style.display = "block";
-//                 } else {
-//                     event.style.display = "none";
-//                 }
-//             }
-
-//             else if (filtre === "week") {
-//                 const diff = (dateEvent - aujourdhui) / (1000 * 60 * 60 * 24);
-
-//                 if (diff >= 0 && diff <= 7) {
-//                     event.style.display = "block";
-//                 } else {
-//                     event.style.display = "none";
-//                 }
-//             }
-
-//             else if (filtre === "month") {
-//                 if (
-//                     dateEvent.getMonth() === aujourdhui.getMonth() &&
-//                     dateEvent.getFullYear() === aujourdhui.getFullYear()
-//                 ) {
-//                     event.style.display = "block";
-//                 } else {
-//                     event.style.display = "none";
-//                 }
-//             }
-
-//         });
-
-//     });
-// });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// ============================================================
-// 1. SELECTEURS
-// ============================================================
 const eventGrid = document.getElementById('eventGrid');
 const searchInput = document.getElementById('searchInput');
 const clearSearch = document.getElementById('clearSearch');
@@ -118,16 +14,11 @@ let currentPage = 1;
 const itemsPerPage = 6;
 let allEvents = [];
 
-// ============================================================
-// 2. RECUPERE TOUT EVENEMENTS
-// ============================================================
+// pran evenman yo
 function getAllEvents() {
     return Array.from(document.querySelectorAll('.event-card'));
 }
 
-// ============================================================
-// 3. FILTRE EVENEMENTS
-// ============================================================
 function filterEvents() {
     allEvents = getAllEvents();
     
@@ -149,9 +40,6 @@ function filterEvents() {
     });
 }
 
-// ============================================================
-// 4. FILTRE PAR DATE
-// ============================================================
 function filterByDate(dateStr, filterType) {
     if (filterType === 'all' || !dateStr) return true;
     
@@ -170,9 +58,6 @@ function filterByDate(dateStr, filterType) {
     }
 }
 
-// ============================================================
-// 5. AFICHE EVENEMENTS AVEC PAGINATION
-// ============================================================
 function renderEvents() {
     const filtered = filterEvents();
     const total = filtered.length;
@@ -191,9 +76,6 @@ function renderEvents() {
     renderPagination(totalPages);
 }
 
-// ============================================================
-// 6. PAGINATION
-// ============================================================
 function renderPagination(totalPages) {
     const paginationContainer = document.getElementById('paginationControls');
     if (!paginationContainer) return;
@@ -235,10 +117,6 @@ function renderPagination(totalPages) {
         });
     });
 }
-
-// ============================================================
-// 7. SUGGESTIONS DE RECHERCHE
-// ============================================================
 function getAllSearchTerms() {
     const terms = new Set();
     document.querySelectorAll('.event-card').forEach(card => {
@@ -317,10 +195,6 @@ function showSuggestions(query) {
     });
 }
 
-// ============================================================
-// 8. EVENT LISTENERS
-// ============================================================
-
 // Rechèch
 if (searchInput) {
     searchInput.addEventListener('input', function() {
@@ -340,7 +214,6 @@ if (searchInput) {
     });
 }
 
-// Clear search
 if (clearSearch) {
     clearSearch.addEventListener('click', () => {
         searchInput.value = '';
@@ -352,7 +225,6 @@ if (clearSearch) {
     });
 }
 
-// Filtre kategori
 filtreBtns.forEach(btn => {
     btn.addEventListener('click', () => {
         filtreBtns.forEach(b => b.classList.remove('active'));
@@ -363,7 +235,6 @@ filtreBtns.forEach(btn => {
     });
 });
 
-// Filtre date
 filtreDateBtns.forEach(btn => {
     btn.addEventListener('click', () => {
         filtreDateBtns.forEach(b => b.classList.remove('active'));
@@ -374,12 +245,10 @@ filtreDateBtns.forEach(btn => {
     });
 });
 
-// Toggle vue
 viewBtns.forEach(btn => {
     btn.addEventListener('click', function() {
         viewBtns.forEach(b => b.classList.remove('active'));
-        this.classList.add('active');
-        
+        this.classList.add('active');      
         const view = this.dataset.view;
         if (view === 'grid') {
             eventGrid.classList.remove('view-list');
@@ -391,16 +260,12 @@ viewBtns.forEach(btn => {
     });
 });
 
-// Fèmen suggestions lè w klike deyò
 document.addEventListener('click', (e) => {
     if (searchSuggestions && !document.querySelector('.recherche')?.contains(e.target)) {
         searchSuggestions.classList.remove('show');
     }
 });
 
-// ============================================================
-// 9. INITIALISATION
-// ============================================================
 document.querySelector('.filtre[data-filter="all"]')?.classList.add('active');
 document.querySelectorAll('.filtre-date').forEach(b => b.classList.remove('active'));
 

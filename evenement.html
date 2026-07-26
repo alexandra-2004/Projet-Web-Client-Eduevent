@@ -4,17 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EduEvent — Événements</title>
-    
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-    
-    <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/animation.css">
 </head>
 <body>
-  
-    <!-- ===== NAVBAR ===== -->
     <nav class="navbar">
         <div class="logo">
             <img class="log" src="images/im.jpg" alt="Logo EduEvent" />
@@ -24,7 +19,6 @@
                 <li><a href="index.html">Accueil</a></li>
                 <li><a href="evenement.html" class="active">Événements</a></li>
                 <li><a href="a-propos.html">À propos</a></li>
-                <!-- <li><a href="profil.html">Profil</a></li> -->
             </ul>
             <ul class="connexion">
                 <li><button class="btn-primary btn-sm"><a id="connexion" href="profil.html">Connexion</a></button></li>
@@ -35,13 +29,8 @@
         </div>
     </nav>
 
-    <!-- ===== MAIN ===== -->
     <main class="container">
-
-        <!-- ===== SECTION ÉVÉNEMENTS ===== -->
         <section class="section" id="evenements">
-
-            <!-- ===== HEADER AVEC RECHERCHE ===== -->
             <div class="section-header">
                 <div class="header-top">
                     <h2>Tous les événements</h2>
@@ -58,7 +47,7 @@
                     </div>
                 </div>
 
-                <!-- Barre de recherche avec suggestions -->
+                <!-- Barre de recherche -->
                 <div class="recherche">
                     <div class="bar">
                         <span class="icon">🔍</span>
@@ -67,12 +56,9 @@
                             <i class="fas fa-times"></i>
                         </button>
                     </div>
-                    <!-- Suggestions -->
                     <div class="search-suggestions" id="searchSuggestions"></div>
                 </div>
             </div>
-
-            <!-- ===== FILTRES ===== -->
             <div class="categorie">
                 <div class="cat">
                     <h3>Catégories</h3>
@@ -85,7 +71,6 @@
                         <button class="filtre" data-filter="autres">Autres</button>
                     </div>
                 </div>
-
                 <div class="date">
                     <h3>Par date</h3>
                     <div class="date-btn">
@@ -96,11 +81,8 @@
                 </div>
             </div>
 
-            <!-- ===== GRILLE DES CARTES ===== -->
             <div class="card-grid view-grid" id="eventGrid">
-
-                <!-- CARTE 1 -->
-                <div class="event-card" data-category="autres" data-date="2026-07-28">
+                <div class="event-card" data-category="autres" data-date="2026-08-28">
                     <div class="card-img">
                         <img src="images/fest.jpg" alt="SEAFEST" />
                         <span class="badge">Populaire</span>
@@ -112,8 +94,6 @@
                         <a class="btn-outline" href="details.html?id=1">Détail</a>
                     </div>
                 </div>
-
-                <!-- CARTE 2 -->
                 <div class="event-card" data-category="autres" data-date="2026-07-16">
                     <div class="card-img">
                         <img src="images/bal.jpg" alt="Bal Masque" />
@@ -126,8 +106,6 @@
                         <a class="btn-outline" href="details.html?id=2">Détail</a>
                     </div>
                 </div>
-
-                <!-- CARTE 3 -->
                 <div class="event-card" data-category="conference" data-date="2026-07-19">
                     <div class="card-img">
                         <img src="images/num.jpg" alt="NumEd" />
@@ -140,8 +118,6 @@
                         <a class="btn-outline" href="details.html?id=3">Détail</a>
                     </div>
                 </div>
-
-                <!-- CARTE 4 -->
                 <div class="event-card" data-category="culture" data-date="2026-07-21">
                     <div class="card-img">
                         <img src="images/foot.jpg" alt="Le Défi vert" />
@@ -154,8 +130,6 @@
                         <a class="btn-outline" href="details.html?id=4">Détail</a>
                     </div>
                 </div>
-
-                <!-- CARTE 5 -->
                 <div class="event-card hidden" data-category="autres" data-date="2026-08-16">
                     <div class="card-img">
                         <img src="images/b576b06847d0fb2592f11cce67efc95c.jpg" alt="Foire Medical" />
@@ -168,8 +142,6 @@
                         <a class="btn-outline" href="details.html?id=5">Détail</a>
                     </div>
                 </div>
-
-                <!-- CARTE 6 -->
                 <div class="event-card hidden" data-category="atelier" data-date="2026-07-26">
                     <div class="card-img">
                         <img src="images/8887c0522cf4f589a4c80d066bede148.jpg" alt="Coding Club" />
@@ -182,8 +154,6 @@
                         <a class="btn-outline" href="details.html?id=6">Détail</a>
                     </div>
                 </div>
-
-                <!-- CARTE 7 -->
                 <div class="event-card hidden" data-category="autres" data-date="2026-07-30">
                     <div class="card-img">
                         <img src="images/c5b1ce0976b9557887f63f54c58dcd02.jpg" alt="Debat" />
@@ -196,22 +166,18 @@
                         <a class="btn-outline" href="details.html?id=7">Détail</a>
                     </div>
                 </div>
-
-                <!-- CARTE 8 -->
-                <div class="event-card hidden" data-category="culture" data-date="2026-07-23">
+                <div class="event-card hidden" data-category="culture" data-date="2026-08-23">
                     <div class="card-img">
                         <img src="images/e2159cb24158d78faa0cfd825082609c.jpg" alt="Foire gastronomique" />
                         <span class="badge">Culture</span>
                     </div>
                     <div class="card-body">
                         <h3>Foire gastronomique</h3>
-                        <p><i class="fas fa-calendar-day"></i> 23 Juillet 2026</p>
+                        <p><i class="fas fa-calendar-day"></i> 23 Aout 2026</p>
                         <p><i class="fas fa-map-marker-alt"></i> Agora, CHCL</p>
                         <a class="btn-outline" href="details.html?id=8">Détail</a>
                     </div>
                 </div>
-
-                <!-- CARTE 9 -->
                 <div class="event-card hidden" data-category="conference" data-date="2026-08-20">
                     <div class="card-img">
                         <img src="images/0aea39563dbb89048f775337fa7197ca.jpg" alt="psychoaide" />
@@ -224,75 +190,68 @@
                         <a class="btn-outline" href="details.html?id=9">Détail</a>
                     </div>
                 </div>
-
-                <!-- CARTE 10 -->
-                <div class="event-card hidden" data-category="sports" data-date="2026-08-15">
+                <div class="event-card hidden" data-category="sports" data-date="2026-09-15">
                     <div class="card-img">
                         <img src="images/1ddcad35dd9f6df59114e9d9832dbd0c.jpg" alt="Football" />
                         <span class="badge">Sport</span>
                     </div>
                     <div class="card-body">
                         <h3>Competition football interfacultaire</h3>
-                        <p><i class="fas fa-calendar-day"></i> 15 Aout 2026</p>
+                        <p><i class="fas fa-calendar-day"></i> 15 Septembre 2026</p>
                         <p><i class="fas fa-map-marker-alt"></i> Parc Saint-Raphael, CHCL</p>
                         <a class="btn-outline" href="details.html?id=10">Détail</a>
                     </div>
                 </div>
 
                 <!-- CARTE 11 -->
-                <div class="event-card hidden" data-category="autres" data-date="2026-08-10">
+                <div class="event-card hidden" data-category="autres" data-date="2026-08-30">
                     <div class="card-img">
                         <img src="images/4ad27d0a1a7b3f699c5e5d15eca03b03.jpg" alt="Musique" />
                         <span class="badge">Art</span>
                     </div>
                     <div class="card-body">
                         <h3>Journée Mondiale de la Musique</h3>
-                        <p><i class="fas fa-calendar-day"></i> 10 Aout 2026</p>
+                        <p><i class="fas fa-calendar-day"></i> 30 Aout 2026</p>
                         <p><i class="fas fa-map-marker-alt"></i> Agora, CHCL</p>
                         <a class="btn-outline" href="details.html?id=11">Détail</a>
                     </div>
                 </div>
 
                 <!-- CARTE 12 -->
-                <div class="event-card hidden" data-category="autres" data-date="2026-08-05">
+                <div class="event-card hidden" data-category="autres" data-date="2026-10-05">
                     <div class="card-img">
                         <img src="images/2429ce395f7728c88d0e815be1ce5d36.jpg" alt="Danse" />
                         <span class="badge">Art</span>
                     </div>
                     <div class="card-body">
                         <h3>Journée Mondiale de la Danse</h3>
-                        <p><i class="fas fa-calendar-day"></i> 05 Aout 2026</p>
+                        <p><i class="fas fa-calendar-day"></i> 05 octobre 2026</p>
                         <p><i class="fas fa-map-marker-alt"></i> Agora, CHCL</p>
                         <a class="btn-outline" href="details.html?id=12">Détail</a>
                     </div>
                 </div>
 
                 <!-- CARTE 13 -->
-                <div class="event-card hidden" data-category="autres" data-date="2026-08-26">
+                <div class="event-card hidden" data-category="autres" data-date="2026-10-26">
                     <div class="card-img">
                         <img src="images/867abd4c0ef715f213f7e47c6df870a6.jpg" alt="Pink Market" />
                         <span class="badge">Populaire</span>
                     </div>
                     <div class="card-body">
                         <h3>Pink Market</h3>
-                        <p><i class="fas fa-calendar-day"></i> 26 Aout 2026</p>
+                        <p><i class="fas fa-calendar-day"></i> 26 octobre 2026</p>
                         <p><i class="fas fa-map-marker-alt"></i> Agora CHCL</p>
                         <a class="btn-outline" href="details.html?id=13">Détail</a>
                     </div>
                 </div>
 
-            </div><!-- Fin card-grid -->
-
-            <!-- ===== PAGINATION ===== -->
+            </div>
             <div class="pagination" id="paginationControls">
-                <!-- Généré par JavaScript -->
             </div>
 
         </section>
 
     </main>
-
-    <!-- ===== FOOTER ===== -->
     <footer class="footer">
         <div class="footer-grid">
             <div class="footer-col">
@@ -304,11 +263,11 @@
                     La plateforme qui connecte les étudiants aux événements qui façonnent leur avenir.
                 </p>
                 <div class="social-icons">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                </div>
+                <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            </div>
             </div>
             <div class="footer-col">
                 <h4>Liens rapides</h4>
@@ -317,15 +276,6 @@
                     <li><a href="evenement.html">Événements</a></li>
                     <li><a href="a-propos.html">À propos</a></li>
                     <li><a href="profil.html">Profil</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Catégories</h4>
-                <ul>
-                    <li><a href="#">Conférences</a></li>
-                    <li><a href="#">Ateliers</a></li>
-                    <li><a href="#">Sport</a></li>
-                    <li><a href="#">Culture</a></li>
                 </ul>
             </div>
             <div class="footer-col">
@@ -341,8 +291,6 @@
             <p>© 2026 EduEvent. Tous droits réservés.</p>
         </div>
     </footer>
-
-    <!-- ===== JAVASCRIPT ===== -->
     <script src="js/evenements.js"></script>
 </body>
 </html>

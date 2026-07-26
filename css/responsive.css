@@ -149,6 +149,238 @@ font-size: 0.95rem;
     }
 }
 
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .categorie {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    .cat, .date {
+        align-items: center;
+        width: 100%;
+    }
+    .cat-btn, .date-btn {
+        justify-content: center;
+    }
+    .cat-btn button, .date-btn button {
+        padding: 6px 14px;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .cat-btn, .date-btn {
+        gap: 6px;
+    }
+    .cat-btn button, .date-btn button {
+        padding: 5px 12px;
+        font-size: 0.75rem;
+    }
+}
+@media (max-width: 768px) {
+    .header-top {
+        flex-direction: column;
+        align-items: stretch;
+        text-align: center;
+    }
+
+    .header-actions {
+        justify-content: center;
+    }
+
+    .recherche .bar {
+        max-width: 100%;
+    }
+
+    .card-grid.view-list .event-card {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .card-grid.view-list .event-card .card-img {
+        height: 160px;
+    }
+
+    .card-grid.view-list .event-card .card-body {
+        padding: 16px;
+    }
+
+    .categorie {
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+    }
+
+    .cat-btn, .date-btn {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .view-toggle {
+        gap: 2px;
+        padding: 3px;
+    }
+
+    .view-btn {
+        padding: 4px 8px;
+        font-size: 0.85rem;
+    }
+
+    .pagination button {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+}
+
+/* Responsive pou view-list */
+@media (max-width: 768px) {
+    .card-grid.view-list .event-card {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+    .card-grid.view-list .event-card .card-img {
+        height: 160px;
+    }
+    .card-grid.view-list .event-card .card-body {
+        padding: 16px;
+    }
+}
+
+/* Responsive pou suggestions */
+@media (max-width: 768px) {
+    .recherche {
+        max-width: 100%;
+    }
+    .search-suggestions {
+        max-height: 180px;
+    }
+}
 
 
 
+
+
+
+
+
+
+
+
+
+/* ============================================================
+   A-PROPOS — RESPONSIVE
+   ============================================================ */
+
+/* --- MOBILE (max 768px) --- */
+@media (max-width: 768px) {
+    
+    /* About grid */
+    .about-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .about-grid .about-text h2 {
+        font-size: 1.8rem;
+    }
+    
+    .about-grid .about-text p {
+        font-size: 0.95rem;
+    }
+    
+    .about-grid .about-image {
+        height: 200px;
+        order: -1; /* Mete imaj anlè */
+    }
+    
+    .about-grid .about-image img {
+        height: 200px;
+        object-fit: cover;
+    }
+    
+    /* Contact grid */
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .contact-form {
+        padding: 0;
+    }
+    
+    .contact-map iframe {
+        height: 200px;
+    }
+    
+    /* FAQ */
+    .faq-item {
+        padding: 12px 16px;
+    }
+    
+    .faq-question {
+        font-size: 0.95rem;
+        padding: 10px 0;
+    }
+    
+    .faq-answer {
+        font-size: 0.9rem;
+        padding: 8px 0 12px;
+    }
+    
+    /* Section header */
+    .section-header h2 {
+        font-size: 1.6rem;
+    }
+    
+    /* Speaker / team */
+    .speaker-list {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .speaker {
+        max-width: 300px;
+        width: 100%;
+    }
+}
+
+/* --- TRÈS PETIT EKRAN (max 480px) --- */
+@media (max-width: 480px) {
+    .about-grid .about-text h2 {
+        font-size: 1.4rem;
+    }
+    
+    .about-grid .about-text p {
+        font-size: 0.85rem;
+    }
+    
+    .about-grid .about-image {
+        height: 160px;
+    }
+    
+    .about-grid .about-image img {
+        height: 160px;
+    }
+    
+    .faq-question {
+        font-size: 0.85rem;
+        padding: 8px 0;
+    }
+    
+    .faq-answer {
+        font-size: 0.8rem;
+    }
+    
+    .contact-form .form-group input,
+    .contact-form .form-group textarea {
+        font-size: 0.9rem;
+        padding: 10px 14px;
+    }
+    
+    .btn-primary {
+        font-size: 0.9rem;
+        padding: 10px 20px;
+    }
+}

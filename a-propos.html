@@ -9,8 +9,6 @@
     <link rel="stylesheet" href="css/responsive.css" />
 </head>
 <body>
-
-    <!-- ===== NAVBAR ===== -->
     <nav class="navbar">
         <div class="logo">
             <img class="log" src="images/im.jpg" alt="Logo EduEvent" />
@@ -29,12 +27,8 @@
             <i class="fas fa-bars"></i>
         </div>
     </nav>
-
-    <!-- ===== MAIN ===== -->
     <main class="container">
-
-        <!-- ===== SECTION À PROPOS ===== -->
-        <section class="section" id="apropos">
+    <section class="section" id="apropos">
             <div class="about-grid">
                 <div class="about-text">
                     <h2>À propos d'EduEvent</h2>
@@ -50,15 +44,7 @@
                         faites partie d'une communauté dynamique !
                     </p>
 
-                    <!-- ===== BOUTON KOPYE ===== -->
-                    <div class="copy-container">
-                        <button id="copyBtn" class="btn-copy">
-                            <i class="fas fa-copy"></i> Copier le texte
-                        </button>
-                        <span id="copyMessage" class="copy-message"></span>
-                    </div>
-
-                    <button class="btn-primary" style="margin-top: 20px;">En savoir plus</button>
+                    <button class="btn-primary" style="margin-top: 20px;"> En savoir plus </button>
                 </div>
 
                 <div class="about-image">
@@ -66,8 +52,6 @@
                 </div>
             </div>
         </section>
-
-        <!-- ===== SECTION ÉQUIPE ===== -->
         <section class="section">
             <div class="section-header"><h2>Notre Équipe</h2></div>
             <br />
@@ -75,21 +59,18 @@
                 <div class="speaker">
                     <img src="images/Arly.jpg" alt="Arly JEAN" />
                     <h3>Arly JEAN</h3>
-                    <p>Spécialiste IA</p>
+                    <p><strong>Role : </strong> Acceuil (index.html), evenements (evenement.html) et details (details.html)</p>
                 </div>
                 <div class="speaker">
                     <img src="images/Lex.jpg" alt="Alexandra MICHEL" />
                     <h3>Alexandra Orlanges C. MICHEL</h3>
-                    <p>Data Scientist</p>
+                    <p> <strong>Role : </strong>profil (profil.html), a-propos (a-propos.html), integration et tests </p>
                 </div>
             </div>
         </section>
-
-        <!-- ===== SECTION FORMULAIRE DE CONTACT ===== -->
         <section class="section contact-section">
             <div class="section-header"><h2>Contactez-nous</h2></div>
-            <div class="contact-grid">
-                <!-- Fòmilè kontak -->
+            <div class="contact-grid">        
                 <form id="contactForm" class="contact-form">
                     <div class="form-group">
                         <label for="contactName">Nom complet</label>
@@ -108,9 +89,7 @@
                         <textarea id="contactMessage" rows="5" placeholder="Votre message..." required></textarea>
                     </div>
                     <button type="submit" class="btn-primary">Envoyer</button>
-                </form>
-
-                <!-- Kat entèaktif (Google Maps iframe) -->
+                </form>         
                 <div class="contact-map">
                     <h3>Nous trouver</h3>
                     <div class="map-container">
@@ -125,12 +104,11 @@
                         </iframe>
                     </div>
                     <p><i class="fas fa-map-pin"></i> Limonade, Haïti</p>
-                    <p><i class="fas fa-phone"></i> +509 2345 6789</p>
+                    <p><i class="fas fa-phone"></i> +509 3503 0605</p>
                 </div>
             </div>
         </section>
 
-        <!-- ===== SECTION FAQ ===== -->
         <section class="section faq-section">
             <div class="section-header"><h2>FAQ - Foire aux questions</h2></div>
             <div class="faq-list">
@@ -172,10 +150,7 @@
                 </div>
             </div>
         </section>
-
     </main>
-
-    <!-- ===== FOOTER ===== -->
     <footer class="footer">
         <div class="footer-grid">
             <div class="footer-col">
@@ -185,11 +160,11 @@
                 </div>
                 <p class="footer-desc">La plateforme qui connecte les étudiants aux événements qui façonnent leur avenir.</p>
                 <div class="social-icons">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                </div>
+                <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            </div>
             </div>
             <div class="footer-col">
                 <h4>Liens rapides</h4>
@@ -200,15 +175,7 @@
                     <li><a href="profil.html">Profil</a></li>
                 </ul>
             </div>
-            <div class="footer-col">
-                <h4>Catégories</h4>
-                <ul>
-                    <li><a href="#">Conférences</a></li>
-                    <li><a href="#">Ateliers</a></li>
-                    <li><a href="#">Sport</a></li>
-                    <li><a href="#">Culture</a></li>
-                </ul>
-            </div>
+    
             <div class="footer-col">
                 <h4>Contact</h4>
                 <ul>
@@ -223,7 +190,6 @@
         </div>
     </footer>
 
-    <!-- ===== SCRIPT ===== -->
     <script src="js/main.js"></script>
 
 </body>
