@@ -1,41 +1,80 @@
-# EduEvent - Plateforme d'événements universitaires
+EduEvent
 
-## Description
-EduEvent est un site web statique développé dans le cadre du cours de Développement Web. Il permet à la communauté universitaire de consulter, rechercher et s'inscrire aux événements du campus.
+EduEvent est une plateforme web moderne dédiée à la découverte et à la gestion d'événements éducatifs, culturels et artistiques. Elle permet aux utilisateurs de consulter les événements disponibles, d'obtenir leurs détails et de naviguer dans une interface intuitive.
 
-## Technologies utilisées
-- HTML5
-- CSS3 (Flexbox, Grid, responsive)
-- JavaScript (vanilla)
-- JSON pour les données
+ Démo
 
-## Structure du projet
-- `index.html` : Page d'accueil
-- `evenements.html` : Liste avec filtres
-- `detail.html` : Détail d'un événement
-- `profil.html` : Espace étudiant
-- `a-propos.html` : À propos, contact, FAQ
-- `css/` : Styles
-- `js/` : Scripts
-- `data/` : Fichier JSON
-- `images/` : Ressources images
+🔗 https://alexandra-2004.github.io/Projet-Web-Client-Eduevent/
 
-## Fonctionnalités principales
-- Affichage dynamique des événements depuis JSON
-- Recherche et filtres (catégorie, date)
-- Toggle vue grille/liste
-- Pagination "Charger plus"
-- Inscription avec validation
-- Compteur de places restantes
-- Animations de statistiques
-- Formulaire newsletter
-- FAQ accordéon
-- Carte Google Maps (iframe)
-- Responsive design
+ Fonctionnalités
 
-## Auteurs
-- Alexandra Orlanges MICHEL
-- Arly JEAN
+•  Page d'accueil moderne
+• Consultation des événements
+•  Affichage détaillé de chaque événement
+•  Page de profil utilisateur
+•  Page À propos
+•  Interface responsive (mobile, tablette et ordinateur)
+•  Chargement dynamique des données avec JSON
+• Navigation fluide en JavaScript
 
-## Date
-Juillet 2026
+ Technologies utilisées
+
+• HTML5
+• CSS3
+• JavaScript (ES6)
+• JSON
+• Font Awesome
+• Git & GitHub
+
+ Structure du projet
+
+Projet-Web-Client-Eduevent/
+│── index.html
+│── evenement.html
+│── details.html
+│── profil.html
+│── a-propos.html
+│── css/
+│── js/
+│── images/
+│── data/
+│── README.md
+
+
+ Installation
+
+Clonez le projet :
+
+bash
+git clone https://github.com/alexandra-2004/Projet-Web-Client-Eduevent.git
+
+
+Ouvrez ensuite le fichier index.html dans votre navigateur.
+
+ Objectif
+
+Ce projet a été réalisé dans le cadre d'un apprentissage du développement web afin de mettre en pratique :
+
+• La création d'interfaces responsives
+• La manipulation du DOM
+• L'organisation d'un projet Front-end
+• L'utilisation de Git et GitHub
+• Le chargement de données JSON
+
+Aperçu
+
+images/screenshot.jpg
+
+ Développeurs
+
+Alexandra Michel
+
+Etudiante en informatique
+
+GitHub : https://github.com/alexandra-2004
+
+Arly Jean
+
+Etudiant en informatique
+
+ Si ce projet vous plaît, n'hésitez pas à laisser une étoile sur le dépôt GitHub.
