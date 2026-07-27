@@ -307,7 +307,7 @@ font-size: 0.95rem;
     }
     
     .contact-form {
-        padding: 0;
+        padding: 20px;
     }
     
     .contact-map iframe {
@@ -375,6 +375,7 @@ font-size: 0.95rem;
     
     .contact-form .form-group input,
     .contact-form .form-group textarea {
+        
         font-size: 0.9rem;
         padding: 10px 14px;
     }
