@@ -42,42 +42,22 @@ document.addEventListener('DOMContentLoaded', function() {
         const places = JSON.parse(data);
         return places[eventId] !== undefined ? places[eventId] : null;
     }
-// AFICHAGE NON FICHYE FOTO
-    const regPhotoInput = document.getElementById('reg-photo');
-    const regFileName = document.getElementById('reg-file-name');
-    if (regPhotoInput && regFileName) {
-        regPhotoInput.addEventListener('change', function() {
-            if (regPhotoInput.files && regPhotoInput.files[0]) {
-                regFileName.textContent = regPhotoInput.files[0].name;
-            } else {
-                regFileName.textContent = 'Aucun fichier';
-            }
-        });
-    }
 
-    const editPhotoInput = document.getElementById('edit-photo');
-    const editFileName = document.getElementById('edit-file-name');
-    if (editPhotoInput && editFileName) {
-        editPhotoInput.addEventListener('change', function() {
-            if (editPhotoInput.files && editPhotoInput.files[0]) {
-                editFileName.textContent = editPhotoInput.files[0].name;
-            } else {
-                editFileName.textContent = 'Conserver la photo actuelle';
-            }
-        });
-    }
     // AFICHE PROFIL
- 
+
     function showProfile() {
-    const user = getCurrentUser();
-    if (!user || !user.connected) {
-        registerContainer.style.display = 'none';
-        loginContainer.style.display = 'block';
-        profileContainer.style.display = 'none';
-        editContainer.style.display = 'none';
-        return;
-    }
-    
+        const user = getCurrentUser();
+
+        // BUG FIX: on verifye si moun nan konekte tout bon (connected === true)
+        // avan, sèl kondisyon an te "if (!user)" e sa te fè bouton
+        // Déconnexion pa t janm mennen retounen sou fòm lan
+        if (!user || !user.connected) {
+            registerContainer.style.display = user ? 'none' : 'block';
+            loginContainer.style.display = user ? 'block' : 'none';
+            profileContainer.style.display = 'none';
+            editContainer.style.display = 'none';
+            return;
+        }
 
         registerContainer.style.display = 'none';
         loginContainer.style.display = 'none';
@@ -118,7 +98,7 @@ function afficherEvenements() {
         .then(response => response.json())
         .then(allEvents => {
             const userEvents = allEvents.filter(e => eventIds.includes(e.id));
-            
+
             if (userEvents.length === 0) {
                 eventsList.innerHTML = '<p class="empty-events">Aucun événement pour le moment.</p>';
                 return;
@@ -365,6 +345,33 @@ function afficherEvenements() {
             loginContainer.style.display = 'none';
             profileContainer.style.display = 'none';
             editContainer.style.display = 'none';
+        });
+    }
+
+    // BUG FIX: afichaj non fichye foto a lè moun chwazi youn
+    // (pa t gen okenn "listener" sou input yo avan, kidonk tèks la
+    // te toujou rete sou "Aucun fichier")
+    const regPhotoInput = document.getElementById('reg-photo');
+    const regFileName = document.getElementById('reg-file-name');
+    if (regPhotoInput && regFileName) {
+        regPhotoInput.addEventListener('change', function() {
+            if (regPhotoInput.files && regPhotoInput.files[0]) {
+                regFileName.textContent = regPhotoInput.files[0].name;
+            } else {
+                regFileName.textContent = 'Aucun fichier';
+            }
+        });
+    }
+
+    const editPhotoInput = document.getElementById('edit-photo');
+    const editFileName = document.getElementById('edit-file-name');
+    if (editPhotoInput && editFileName) {
+        editPhotoInput.addEventListener('change', function() {
+            if (editPhotoInput.files && editPhotoInput.files[0]) {
+                editFileName.textContent = editPhotoInput.files[0].name;
+            } else {
+                editFileName.textContent = 'Conserver la photo actuelle';
+            }
         });
     }
 
