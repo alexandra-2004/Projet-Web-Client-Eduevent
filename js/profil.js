@@ -52,8 +52,8 @@ document.addEventListener('DOMContentLoaded', function() {
         // avan, sèl kondisyon an te "if (!user)" e sa te fè bouton
         // Déconnexion pa t janm mennen retounen sou fòm lan
         if (!user || !user.connected) {
-            registerContainer.style.display = user ? 'none' : 'block';
-            loginContainer.style.display = user ? 'block' : 'none';
+            registerContainer.style.display = user ? 'none' : 'flex';
+            loginContainer.style.display = user ? 'flex' : 'none';
             profileContainer.style.display = 'none';
             editContainer.style.display = 'none';
             return;
@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         registerContainer.style.display = 'none';
         loginContainer.style.display = 'none';
-        profileContainer.style.display = 'block';
+        profileContainer.style.display = 'flex';
         editContainer.style.display = 'none';
 
         // Mles infos
@@ -132,8 +132,8 @@ function afficherEvenements() {
             const email = document.getElementById('reg-email').value.trim();
             const faculte = document.getElementById('reg-faculte').value;
             const niveau = document.getElementById('reg-niveau').value;
-            const password = document.getElementById('reg-password').value;
-            const confirm = document.getElementById('reg-confirm').value;
+            const password = document.getElementById('reg-password').value.trim();
+            const confirm = document.getElementById('reg-confirm').value.trim();
             const photoInput = document.getElementById('reg-photo');
             const messageDiv = document.getElementById('reg-message');
 
@@ -257,7 +257,7 @@ function afficherEvenements() {
             document.getElementById('edit-password').value = '';
 
             profileContainer.style.display = 'none';
-            editContainer.style.display = 'block';
+            editContainer.style.display = 'flex';
         });
     }
 
@@ -338,7 +338,7 @@ function afficherEvenements() {
         switchToLogin.addEventListener('click', function(e) {
             e.preventDefault();
             registerContainer.style.display = 'none';
-            loginContainer.style.display = 'block';
+            loginContainer.style.display = 'flex';
             profileContainer.style.display = 'none';
             editContainer.style.display = 'none';
         });
@@ -347,7 +347,7 @@ function afficherEvenements() {
     if (switchToRegister) {
         switchToRegister.addEventListener('click', function(e) {
             e.preventDefault();
-            registerContainer.style.display = 'block';
+            registerContainer.style.display = 'flex';
             loginContainer.style.display = 'none';
             profileContainer.style.display = 'none';
             editContainer.style.display = 'none';
@@ -381,6 +381,24 @@ function afficherEvenements() {
         });
     }
 
+    // BUG FIX: bouton pou wè modpas la (👁) pou moun ka verifye
+    // sa yo tape a anvan yo soumèt fòm lan
+    document.querySelectorAll('.toggle-password').forEach(function(icon) {
+        icon.addEventListener('click', function() {
+            const target = document.getElementById(icon.getAttribute('data-target'));
+            if (!target) return;
+            if (target.type === 'password') {
+                target.type = 'text';
+                icon.classList.remove('fa-eye');
+                icon.classList.add('fa-eye-slash');
+            } else {
+                target.type = 'password';
+                icon.classList.remove('fa-eye-slash');
+                icon.classList.add('fa-eye');
+            }
+        });
+    });
+
     // mobil gestion
     const menuToggle = document.getElementById('menuToggle');
     const navLinks = document.getElementById('navLinks');
@@ -396,7 +414,7 @@ function afficherEvenements() {
     const urlParams = new URLSearchParams(window.location.search);
     const redirect = urlParams.get('redirect');
     if (redirect) {
-        loginContainer.style.display = 'block';
+        loginContainer.style.display = 'flex';
         registerContainer.style.display = 'none';
         profileContainer.style.display = 'none';
         editContainer.style.display = 'none';

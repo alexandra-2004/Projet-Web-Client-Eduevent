@@ -1565,34 +1565,6 @@ color: #8aa2c0;
     margin: 0;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* ============================================================
    PROFIL PAGE — STYLES
    ============================================================ */
@@ -1601,7 +1573,8 @@ color: #8aa2c0;
 .profile-section {
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
+    min-height: 85vh;
     padding: 40px 20px;
     width: 100%;
 }
@@ -1958,6 +1931,7 @@ form {
 @media (max-width: 768px) {
     .profile-section {
         padding: 20px 12px;
+        min-height: auto;
     }
 
     form {
@@ -2049,57 +2023,3 @@ form {
         padding: 12px;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
