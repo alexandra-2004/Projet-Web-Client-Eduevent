@@ -194,6 +194,12 @@ function afficherEvenements() {
         };
 
         saveCurrentUser(user);
+
+        // BUG FIX: 'eduevent_profile_events' pa t atache a yon itilizatè
+        // presi, kidonk yon nouvo kont te ka eritye evènman ansyen
+        // itilizatè a. Nou videyifye lis la pou chak nouvo enskripsyon.
+        saveProfileEvents([]);
+
         messageDiv.textContent = '✅ Inscription réussie ! Bienvenue ' + prenom + ' !';
         messageDiv.style.color = '#22c55e';
 
